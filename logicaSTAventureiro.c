@@ -23,7 +23,7 @@ int main(){
 
     printf("SEJA BEM VINDO AO JOGO DE SUPER TRUNFO\n");
     printf("Menu Principal\n");
-    printf("1. Iniciar Jobo\n");
+    printf("1. Iniciar Jogo\n");
     printf("2. Ver Regras\n");
     printf("3. Sair\n");
     printf("Escolha uma opção\n");
