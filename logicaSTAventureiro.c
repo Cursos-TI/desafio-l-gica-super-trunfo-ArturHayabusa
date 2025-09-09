@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-   int opcao, escolhacarta, escolham;
+   int opcao, escolhacarta, escolham, escolham2, resultado, resultado2;
    
     //Carta 1
     unsigned long int populacao1 = 6748000;
@@ -51,16 +51,17 @@ int main(){
             printf("5. PIB per Capita:%.2f reais \n",percap1);
             printf("6. Densidade Demográfica: %.2f hab/km²\n",denpup1);
             printf("---------------------------------------------------\n");
-            printf("Escolha qual estatistica usar: ");
+            printf("Escolha o primeiro atributo: ");
             scanf("%d",&escolham);
             switch (escolham)
             {
             case 1:
                 printf("Você Escolheu: População (%d)",populacao1);
                 printf("Minha carta tem %d\n",populacao2);
-                    if(populacao1 > populacao2){
+                    resultado = populacao1 > populacao2 ? 1 : 0;
+                    if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(populacao2 > populacao1){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -69,9 +70,10 @@ int main(){
             case 2:
             printf("Você Escolheu: Área (%.2f km²)\n",area1);
             printf("A minha carta tem %.2f km²\n",area2);
-                    if(area1 > area2){
+                resultado = area1 > area2 ? 1 : 0;    
+                if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(area1 > area2){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -80,9 +82,10 @@ int main(){
             case 3:
             printf("Você Escolheu: PIB (R$ %.2f bilhões)\n",pib1);
             printf("Minha carta tem R$ %.2f bilhões\n",pib2);
-                    if(pib1 > pib2){
+            resultado = pib1 > pib2 ? 1 : 0;
+                    if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(pib2 > pib1){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -91,9 +94,10 @@ int main(){
             case 4:
             printf("Você Escolheu: Pontos Turisticos (%d)\n",pontost1);
             printf("Minha carta tem %d\n",pontost2);
-                    if(pontost1 > pontost2){
+            resultado = pontost1 > pontost2 ? 1 : 0;
+                    if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(pontost2 > pontost1){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -102,9 +106,10 @@ int main(){
             case 5:
             printf("Você Escolheu: Per Capta (R$ %.2f)\n",percap1);
             printf("Minha carta tem R$ %.2f\n",percap2);
-                    if(percap1 > percap2){
+            resultado = percap1 > percap2 ? 1 : 0;
+                    if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(percap2 > percap1){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -113,9 +118,10 @@ int main(){
             case 6:
             printf("Você Escolheu: Densidade Demográfica: (%.2f hab/km²)\n",denpup1);
             printf("Minha carta tem %.2f hab/km²\n",denpup2);
-                    if(denpup1 < denpup2){
+            resultado = denpup1 < denpup2 ? 1 : 0;
+                    if(resultado == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(denpup2 < denpup1){
+                    }else if(resultado == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -125,6 +131,105 @@ int main(){
             default:
             printf("Opção invalida, Tente novamente\n");
                 break;
+            }
+            printf("Estatisticas:\n");
+            printf("1. População: %d \n", populacao1 );
+            printf("2. Área: %.2f km² \n", area1 );
+            printf("3. Pib: %.2f bilhoes de reais. \n", pib1);
+            printf("4. Pontos turisticos: %d \n", pontost1);
+            printf("5. PIB per Capita:%.2f reais \n",percap1);
+            printf("6. Densidade Demográfica: %.2f hab/km²\n",denpup1);
+            printf("---------------------------------------------------\n");
+            printf("Escolha o segundo atributo: ");
+            scanf("%d",&escolham2);
+            if(escolham == escolham2){
+                printf("você não pode escolher o mesmo atributo!\n");
+            }else{
+            switch (escolham2)
+            {
+            case 1:
+                printf("Você Escolheu: População (%d)",populacao1);
+                printf("Minha carta tem %d\n",populacao2);
+                    resultado2 = populacao1 > populacao2 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 2:
+            printf("Você Escolheu: Área (%.2f km²)\n",area1);
+            printf("A minha carta tem %.2f km²\n",area2);
+                resultado2 = area1 > area2 ? 1 : 0;    
+                if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }    
+                break;
+            case 3:
+            printf("Você Escolheu: PIB (R$ %.2f bilhões)\n",pib1);
+            printf("Minha carta tem R$ %.2f bilhões\n",pib2);
+            resultado = pib1 > pib2 ? 1 : 0;
+                    if(resultado == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 4:
+            printf("Você Escolheu: Pontos Turisticos (%d)\n",pontost1);
+            printf("Minha carta tem %d\n",pontost2);
+            resultado2 = pontost1 > pontost2 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 5:
+            printf("Você Escolheu: Per Capta (R$ %.2f)\n",percap1);
+            printf("Minha carta tem R$ %.2f\n",percap2);
+            resultado2 = percap1 > percap2 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 6:
+            printf("Você Escolheu: Densidade Demográfica: (%.2f hab/km²)\n",denpup1);
+            printf("Minha carta tem %.2f hab/km²\n",denpup2);
+            resultado2 = denpup1 < denpup2 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            
+            default:
+            printf("Opção invalida, Tente novamente\n");
+                break;
+            }}
+            if(resultado && resultado2 ){
+                printf("VOCÊ VENCEU!!!");
+            } else if (resultado != resultado2==1){
+                printf("E O JOGO TERMINA EM EMPATE!!!");
+            } else {
+                printf("VOCÊ PERDEU!!");
             }
         break;
         case 2:
@@ -148,9 +253,10 @@ int main(){
             case 1:
                 printf("Você Escolheu: População (%d)\n",populacao2);
                 printf("Minha carta tem %d\n",populacao1);
-                    if(populacao1 < populacao2){
+                resultado2 = populacao2 > populacao1 ? 1 : 0;
+                    if(resultado2== 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(populacao2 < populacao1){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -159,9 +265,10 @@ int main(){
             case 2:
             printf("Você Escolheu: Área Km²(%.2f)\n",area2);
             printf("Minha carta tem %.2f km²\n",area1);
-                    if(area1 < area2){
+            resultado2 = area2 > area1 ? 1 : 0 ;
+                    if(resultado2 ==1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(area1 < area2){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -170,9 +277,10 @@ int main(){
             case 3:
             printf("Você Escolheu: PIB (R$ %.2f Bilhões)\n",pib2);
             printf("Minha carta tem R$ %.2f Bilhões\n",pib1);
-                    if(pib1 < pib2){
+            resultado2 = pib2 > pib1 ? 1 : 0;
+                    if(resultado2 == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(pib2 < pib1){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -181,9 +289,10 @@ int main(){
             case 4:
             printf("Você Escolheu: Pontos Turisticos (%d)\n",pontost2);
             printf("Minha carta tem %d\n",pontost1);
-                    if(pontost1 < pontost2){
+            resultado2 = pontost2 > pontost1 ? 1 : 0;
+                    if(resultado2 == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(pontost2 < pontost1){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -192,9 +301,10 @@ int main(){
             case 5:
             printf("Você Escolheu: Per Capta (R$ %.2f)\n",percap2);
             printf("A minha carta tem R$ %.2f\n",percap1);
-                    if(percap1 < percap2){
+            resultado2 = percap2 > percap1 ? 1 : 0;
+                    if(resultado2 == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(percap2 < percap1){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!");
@@ -203,9 +313,10 @@ int main(){
             case 6:
             printf("Você Escolheu: Densidade Demográfica: (%.2f hab/km²)\n",denpup2);
             printf("Minha carta tem %.2f hab/km²\n",denpup1);
-                    if(denpup1 > denpup2){
+            resultado2 = denpup2 < denpup1 ? 1 : 0;
+                    if(resultado2 == 1){
                         printf("A sua Carta Venceu!\n");
-                    }else if(denpup2 > denpup1){
+                    }else if(resultado2 == 0){
                         printf("A minha Carta Venceu!\n");
                     }else{
                         printf("EMPATE!!\n");
@@ -216,8 +327,108 @@ int main(){
             printf("Opção invalida, Tente novamente\n");
                 break;
             }
+            printf("Estatisticas:\n");            
+            printf("1. População: %d \n", populacao2 );
+            printf("2. Área: %f km² \n", area2 );
+            printf("3. Pib: %f bilhoes de reais. \n", pib2);
+            printf("4. Pontos turisticos: %d \n", pontost2);
+            printf("5. PIB per Capita:%.2f reais \n",percap2);
+            printf("6. Densidade Populacional: %.2f hab/km²\n",denpup2);
+            printf("---------------------------------------------------\n");
+            printf("Escolha o segundo atributo: ");
+            scanf("%d",&escolham2);
+            if(escolham == escolham2){
+                printf("Você não pode escolher o mesmo atributo!");
+            }else{
+            switch (escolham2)
+            {
+            case 1:
+                printf("Você Escolheu: População (%d)\n",populacao2);
+                printf("Minha carta tem %d\n",populacao1);
+                resultado2 = populacao2 > populacao1 ? 1 : 0;
+                    if(resultado2== 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 2:
+            printf("Você Escolheu: Área Km²(%.2f)\n",area2);
+            printf("Minha carta tem %.2f km²\n",area1);
+            resultado2 = area2 > area1 ? 1 : 0 ;
+                    if(resultado2 ==1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }    
+                break;
+            case 3:
+            printf("Você Escolheu: PIB (R$ %.2f Bilhões)\n",pib2);
+            printf("Minha carta tem R$ %.2f Bilhões\n",pib1);
+            resultado2 = pib2 > pib1 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 4:
+            printf("Você Escolheu: Pontos Turisticos (%d)\n",pontost2);
+            printf("Minha carta tem %d\n",pontost1);
+            resultado2 = pontost2 > pontost1 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            case 5:
+            printf("Você Escolheu: Per Capta (R$ %.2f)\n",percap2);
+            printf("A minha carta tem R$ %.2f\n",percap1);
+            resultado2 = percap2 > percap1 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!");
+                    }
+                break;
+            case 6:
+            printf("Você Escolheu: Densidade Demográfica: (%.2f hab/km²)\n",denpup2);
+            printf("Minha carta tem %.2f hab/km²\n",denpup1);
+            resultado2 = denpup2 < denpup1 ? 1 : 0;
+                    if(resultado2 == 1){
+                        printf("A sua Carta Venceu!\n");
+                    }else if(resultado2 == 0){
+                        printf("A minha Carta Venceu!\n");
+                    }else{
+                        printf("EMPATE!!\n");
+                    }
+                break;
+            
+            default:
+            printf("Opção invalida, Tente novamente\n");
+                break;
+            }}
+            if(resultado && resultado2){
+                printf("VOCÊ VENCEU!!!");
+            } else if (resultado != resultado2){
+                printf("E O JOGO TERMINA EM EMPATE!!!");
+            } else {
+                printf("VOCÊ PERDEU!!");
+            }
+
         break;
-        break;
+        
         default:
         printf("Opção invalida, Tente novamente\n");
             break;
