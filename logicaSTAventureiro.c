@@ -132,6 +132,7 @@ int main(){
             printf("Opção invalida, Tente novamente\n");
                 break;
             }
+            printf("----------------------------------------------------------------\n");
             printf("Estatisticas:\n");
             printf("1. População: %d \n", populacao1 );
             printf("2. Área: %.2f km² \n", area1 );
@@ -327,6 +328,7 @@ int main(){
             printf("Opção invalida, Tente novamente\n");
                 break;
             }
+            printf("-------------------------------------------------------\n");
             printf("Estatisticas:\n");            
             printf("1. População: %d \n", populacao2 );
             printf("2. Área: %f km² \n", area2 );
